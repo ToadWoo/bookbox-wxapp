@@ -1,0 +1,131 @@
+.search-content{
+    width: 100%;
+    background: #338FFC;
+}
+.form-in{
+    display: flex;
+    flex-direction: row;
+    padding: 20rpx;
+}
+.m-search{
+  position: relative;
+}
+.icon-search{
+  position: absolute;
+  top: 18rpx;
+  left: 20rpx;
+
+}
+.icon-cancel{
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+
+  padding: 15rpx 20rpx 15rpx 10rpx;
+}
+.search-inp{
+  background: #fff;  
+  width: 475rpx;
+  padding: 10rpx 70rpx;
+  border-radius:15rpx; 
+  height: 45rpx;
+  line-height: 45rpx;
+  min-height: 45rpx;
+}
+.input-placeholder{
+  color: #b2b2b2;
+}
+.search-btn{
+  border: 0;
+  color: #fff;
+  background: none;
+  border-radius: 0 15rpx 15rpx 0; 
+  padding: 10rpx 10rpx 10rpx 25rpx;
+  line-height: 45rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.search-btn::after{
+  content: none;
+}
+
+.scroll-content{
+  background: #f9fbfe;
+}
+.list-content{
+  padding: 0 20rpx;
+}
+.bookitem{
+  background: #fff;
+  border-radius: 20rpx; 
+  margin: 20rpx 0;
+  padding: 20rpx 40rpx;
+  color: #555;
+  box-shadow: 0 0 20rpx #eee; 
+}
+.bookitem .name{
+  font-size: 34rpx;
+  padding-bottom: 10rpx;
+}
+.bookitem .author{
+  font-size: 28rpx;
+  padding-bottom: 10rpx;
+}
+.bookitem .other-infos{
+  display: flex;
+  flex-direction: row;
+  font-size: 22rpx;
+  color: #b2b2b2;
+}
+.bookitem .other-infos .info-item{
+  margin-right: 20rpx;
+  
+}
+.bookitem .other-infos .overflow{
+  max-width: 300rpx;
+   overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+
+/*上拉加载*/
+.load-tip{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 28rpx;
+  color: #b2b2b2;
+  padding-bottom: 20rpx;
+  line-height: 45rpx;
+}
+.icon-load{
+  width: 45rpx;
+  height: 45rpx;
+  /*animation: spin 2s linear infinite;*/
+}
+/*@-webkit-keyframes spin{
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}*/
+
+.search-fail{
+  display: flex;
+  flex-direction: column;
+}
+.search-fail .fail-img{
+  width: 250rpx;
+  height: 250rpx;
+  margin: 200rpx auto 50rpx auto;
+}
+.search-fail .fail-txt{
+  font-size: 28rpx;
+  color: #BCC1CC;
+  text-align: center;
+}

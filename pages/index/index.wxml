@@ -1,0 +1,11 @@
+<image class="logo" mode="aspectFit" src="../../images/bookbox.png"></image>
+<form bindsubmit="formSubmit">
+  <view class="m-search">
+    <icon class="icon-search" type="search" size="18" />
+    <input class="search-inp" bindinput="typeIng" placeholder="书名/作者/ISBN" name="book" focus="{{focus}}" value="{{inputValue}}" bindconfirm="enterSubmit" />
+    <block wx:if="{{cancel}}">
+      <icon class="icon-cancel" bindtap="clearInput" type="clear" size="18" color="#eee" />
+    </block>
+    <button class="search-btn" formType="submit">搜索</button>
+  </view>
+</form>

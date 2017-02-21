@@ -1,0 +1,41 @@
+<view class="search-content">
+  <form class="form" bindsubmit="formSubmit">
+    <view class="form-in">
+      <view class="m-search">
+        <icon class="icon-search" type="search" size="14" />
+        <input class="search-inp" value="{{keyword}}" placeholder="书名/作者/ISBN" name="book" focus="{{focus}}" bindinput="typeIng" bindconfirm="enterSubmit" />
+        <block wx:if="{{cancel}}">
+          <icon class="icon-cancel" bindtap="clearInput" type="clear" size="16" color="#eee" />
+        </block>
+      </view>
+      <button class="search-btn" formType="submit">搜索</button>
+    </view>
+  </form>
+</view>
+<scroll-view class="scroll-content" scroll-y="true" style="height:{{scrollHeight}}px" scroll-top="{{scrollTop}}" bindscrolltolower="{{dropLoadFunc}}" lower-threshold="30">
+  <view class="list-content">
+
+    <block wx:if="{{status=='success'}}">
+      <navigator wx:for="{{booksList}}" url="../detail/detail?bookid={{booksList[index].bookid}}&publisher={{booksList[index].publisher}}&total={{booksList[index].total}}&available={{booksList[index].available}}">
+        <view class="bookitem">
+          <view class="name">{{item.name}}</view>
+          <view class="author"> {{item.author}}</view>
+          <view class="other-infos">
+            <view class="info-item overflow">出版社:{{item.publisher}}</view>
+            <view class="info-item">索书号:{{item.callNumber}}</view>
+            <view class="info-item">可借:{{item.available}}</view>
+          </view>
+        </view>
+      </navigator>
+      <view wx:if="{{ pageCurrent< pagesTotal}}" class="load-tip">
+        <image animation="{{animationData}}" class="icon-load" mode="aspectFit" src="../../images/icon/icon-load.gif"></image>
+        加载中...
+      </view>
+      <view wx:else class="load-tip">没有更多了</view>
+    </block>
+    <view wx:else class="search-fail">
+      <image mode="aspectFit" class="fail-img" src="../../images/search-fail.png"></image>
+      <text class="fail-txt">难过，没有找到您要的书...</text>
+    </view>
+  </view>
+</scroll-view>

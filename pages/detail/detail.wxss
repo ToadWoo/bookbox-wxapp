@@ -1,0 +1,95 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 60rpx 40rpx 0 40rpx;
+  height: 280rpx;
+  background: #338ffc;
+  overflow: hidden;
+}
+
+.header .book-img {
+  width: 250rpx;
+  /*margin-left: 50rpx;*//*height: 150rpx;*/
+  box-shadow: 0 0 20rpx #777;
+}
+
+.header .book-infos {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.header .book-infos .name {
+  width: 380rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.header .book-infos .item {
+  font-size: 24rpx;
+  padding-top: 5rpx;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-around;
+  height: 80rpx;
+  border-bottom: solid 1rpx #ddd;
+}
+
+.tab .item {
+  line-height: 80rpx;
+  min-width: 140rpx;
+  text-align: center;
+}
+
+.tab .cur {
+  border-bottom: solid 5rpx #338ffc;
+  color: #338ffc;
+}
+
+.swiper-content {
+  background: #fff;
+}
+
+.swiper-content .mes .inner {
+  padding: 40rpx 40rpx;
+  font-size: 28rpx;
+}
+
+.swiper-content .mes .inner .label {
+  font-weight: bold;
+  margin: 10rpx 0;
+  color: #555;
+}
+
+.swiper-content .mes .lib-info {
+  color: #777;
+}
+
+.swiper-content .mes .num, .swiper-content .mes .lib {
+  display: flex;
+  padding: 10rpx 0;
+}
+
+.swiper-content .mes .lib .lib-item {
+  width: 22rpx;
+  height: 22rpx;
+  background: #ccc;
+  margin: auto 0 auto 20rpx;
+  border-radius: 50%;
+}
+
+.swiper-content .mes .lib .available {
+  background: #fdcc40;
+}
+
+.swiper-content .mes .intro {
+  color: #777;
+}

@@ -1,0 +1,48 @@
+.logo{
+  display: block;
+  width: 129rpx;
+  height: 129rpx;
+  margin:  100rpx auto;
+}
+.m-search{
+  position: relative;
+  width: 620rpx;
+  margin: 0 auto;
+
+}
+.icon-search{
+  position: absolute;
+  top: 36rpx;
+  left: 25rpx;
+  width: 38rpx;
+  height: 38rpx;
+}
+.icon-cancel{
+  position: absolute;
+  top: 7rpx;
+  right: 105rpx;
+  width: 38rpx;
+  height: 38rpx;
+  padding: 30rpx 20rpx 30rpx 10rpx;
+}
+.search-inp{
+  padding: 30rpx 170rpx 30rpx 70rpx;
+  box-shadow: 0 0 20rpx #EBF5FF;
+  border-radius: 15rpx; 
+}
+.search-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  background: #338FFC; 
+  color: #fff;
+  border-radius: 0 15rpx 15rpx 0; 
+  padding: 30rpx 25rpx;
+  line-height: 1.4rem;
+  text-align: center;
+  font-size: 30rpx;
+}
+.search-btn::after{
+  content: none;
+}
