@@ -1,0 +1,11 @@
+<view>
+  <image class="logo" src="../../images/bookbox.png"></image>
+  <image mode="aspectFit" class="title" src="../../images/title.png"></image>
+  <form bindsubmit="formSubmit">
+    <view class="m-login">
+      <input class="login-inp" name='user' placeholder-class="inp-place" type="number" maxlength="20"  placeholder="请输入学号" />
+      <input class="login-inp" name='password' placeholder-class="inp-place" password="true"  placeholder="锐捷密码" />
+      <button class="login-btn" formType="submit">绑定</button>
+    </view>
+  </form>
+</view>

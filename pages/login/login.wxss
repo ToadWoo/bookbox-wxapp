@@ -1,0 +1,36 @@
+.logo{
+  display: block;
+  width: 129rpx;
+  height: 129rpx;
+  margin:  80rpx auto 10px auto;
+}
+.title{
+    display: block;
+    height: 40rpx;
+    margin: 0 auto 90rpx auto;
+}
+.m-login{
+    width: 80%;
+    margin: 0 auto;
+}
+.m-login .login-inp{
+    border-bottom: 1rpx solid #b2b2b2;
+    margin-bottom:50rpx; 
+    line-height: 80rpx;
+    height: 80rpx;
+    padding: 0 10rpx;
+    font-size: 36rpx
+}
+.m-login .inp-place{
+    color: #b2b2b2;
+}
+.m-login .login-btn{
+    margin-top: 80rpx;
+    background: #338FFC;
+    border: none;
+    height: 94rpx;
+    line-height: 94rpx;
+    font-size: 36rpx;
+    border-radius: 10rpx;
+    color: #fff;
+}

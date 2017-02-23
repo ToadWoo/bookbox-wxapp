@@ -1,12 +1,11 @@
 {
   "pages": [
-     "pages/login/login",
-    "pages/index/index",
+    
+     "pages/index/index",
+      "pages/login/login",
      "pages/detail/detail",
-    "pages/test/test",
     "pages/result/result",
     "pages/logs/logs"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,14 +24,9 @@
         "iconPath": "images/icon/icon-book.png",
         "selectedIconPath": "images/icon/icon-book-cur.png"
       },
+
       {
-        "pagePath": "pages/logs/logs",
-        "text": "收藏",
-        "iconPath": "images/icon/icon-collect.png",
-        "selectedIconPath": "images/icon/icon-collect-cur.png"
-      },
-      {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/login/login",
         "text": "我",
         "iconPath": "images/icon/icon-me.png",
         "selectedIconPath": "images/icon/icon-me-cur.png"
