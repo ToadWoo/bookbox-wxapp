@@ -28,8 +28,8 @@ Page({
     }
   },
 
-enterSubmit:function(e){
-   var that = this;
+  enterSubmit: function (e) {
+    var that = this;
     var keyword = null;
     if (e.detail.value) {
       keyword = e.detail.value;
@@ -45,7 +45,7 @@ enterSubmit:function(e){
       }, 1000)
       return false;
     }
-},
+  },
 
   search: function (keyword) {
     wx.showToast({
@@ -55,7 +55,6 @@ enterSubmit:function(e){
     })
 
     hotapp.request({
-      useProxy: true,
       url: 'http://api.diviniti.cn/jmu/library/search/' + keyword + '/page/1/count/20',
       success: function (res) {
         wx.hideToast()
@@ -74,6 +73,9 @@ enterSubmit:function(e){
         setTimeout(function () {
           wx.hideToast()
         }, 2000)
+      },
+      complete: function () {
+
       }
     })
   },
@@ -99,6 +101,12 @@ enterSubmit:function(e){
       cancel: false,
       focus: true
     })
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '图书盒子',
+      path: '/pages/index/index'
+    }
   }
 
 

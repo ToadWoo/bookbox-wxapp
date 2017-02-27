@@ -1,11 +1,12 @@
 {
   "pages": [
-    
-     "pages/index/index",
-      "pages/login/login",
+   
+    "pages/index/index",
+    "pages/user/user",
+    "pages/collect/collect",
+    "pages/login/login",
      "pages/detail/detail",
-    "pages/result/result",
-    "pages/logs/logs"
+    "pages/result/result"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,14 +25,18 @@
         "iconPath": "images/icon/icon-book.png",
         "selectedIconPath": "images/icon/icon-book-cur.png"
       },
-
       {
-        "pagePath": "pages/login/login",
+        "pagePath": "pages/collect/collect",
+        "text": "搜藏",
+        "iconPath": "images/icon/icon-collect.png",
+        "selectedIconPath": "images/icon/icon-collect-cur.png"
+      },
+      {
+        "pagePath": "pages/user/user",
         "text": "我",
         "iconPath": "images/icon/icon-me.png",
         "selectedIconPath": "images/icon/icon-me-cur.png"
       }
     ]
-  },
-  "debug": true
+  }
 }

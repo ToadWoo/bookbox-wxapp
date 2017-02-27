@@ -1,0 +1,90 @@
+<view class="header">
+  <view wx:if="{{isbind}}" class="avatar-cot ">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </view>
+  <view wx:else class="avatar-cot unlogin-avatar">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </view>
+  <block wx:if="{{isbind}}">
+    <view class="user-infos">
+      <view class="username">{{studentInfoes.infoes.userName}}</view>
+      <view class="remark">{{studentInfoes.infoes.userRemarks}}</view>
+    </view>
+    <button class="logout-btn" type="default" size="mini" plain="true" hover-class="none" bindtap="unBind"> 解绑 </button>
+  </block>
+</view>
+<block wx:if="{{isbind}}">
+  <view wx:if="{{current=='0'}}" class="tab">
+    <button class="item cur" plain="true" data-current="0" bindtap="tabSwitch">
+      <view class="num" >{{booksTotal}}</view>
+      <view class="label">已借</view>
+    </button>
+    <button class="item" plain="true" data-current="1" bindtap="tabSwitch">
+      <view class="num danger" >{{warnTotal}}</view>
+      <view class="label">催还</view>
+    </button>
+  </view>
+  <view wx:else class="tab">
+    <button class="item " plain="true" data-current="0" bindtap="tabSwitch">
+      <view class="num" >{{booksTotal}}</view>
+      <view class="label">已借</view>
+    </button>
+    <button class="item cur"  plain="true" data-current="1" bindtap="tabSwitch">
+      <view class="num danger">{{warnTotal}}</view>
+      <view class="label">催还</view>
+    </button>
+  </view>
+</block>
+<view class="list-content">
+  <view wx:if="{{!isbind}}" class="unlogin">
+    <image class="img" mode="aspectFit" src="../../images/connect.png"></image>
+    <view class="tip">绑定图书馆账号后查看借阅情况</view>
+    <navigator class="btn" url="/pages/login/login">前往绑定</navigator>
+  </view>
+  <view wx:if="{{isbind}}">
+    <block wx:if="{{current=='0'}}">
+      <view class="null-tip" wx:if="{{booksTotal=='0'||booksTotal=='null'}}">
+        <image class="img" mode="aspectFit" src="../../images/nobook.png"></image>
+        <view class="txt">
+          您目前没有借书哦~
+        </view>
+      </view>
+      <block wx:else>
+        <navigator wx:for="{{booksList}}" url="../detail/detail?bookid={{booksList[index].bookid}}&publisher=图书盒子&total=未知&available=未知">
+          <view class="bookitem">
+            <view class="name">{{item.name}}</view>
+            <view class="author">作者: {{item.author}}</view>
+            <view class="other-infos">
+              <view class="info-item overflow">借书时间:{{item.borrowedDate.rawValue}}</view>
+              <view class="info-item">应还时间:{{item.expireDate.rawValue}}</view>
+              <view wx:if="{{item.renewable}}" class="info-item">可续借</view>
+              <view wx:else class="info-item">不可续借</view>
+            </view>
+            <view wx:if="{{item.tip<0}}" class="tip danger">超期{{-item.tip}}天</view>
+            <view wx:else class="tip ">剩余{{item.tip}}天</view>
+          </view>
+        </navigator>
+      </block>
+    </block>
+    <block wx:else>
+      <view class="null-tip" wx:if="{{warnTotal=='0'||warnTotal=='null'}}">
+        <image class="img" mode="aspectFit" src="../../images/nobook-happy.png"></image>
+        <view class="txt">
+          很棒，继续保持良好的借书习惯~
+        </view>
+      </view>
+      <block wx:else>
+        <navigator wx:for="{{warnList}}" url="../detail/detail?bookid={{booksList[index].bookid}}&publisher=图书盒子&total=未知&available=未知">
+          <view class="bookitem">
+            <view class="name">{{item.name}}</view>
+            <view class="author">作者: {{item.author}}</view>
+            <view class="other-infos">
+              <view class="info-item">还书地点:{{item.location}}</view>
+              <view class="info-item">应还时间:{{item.expiredDate.rawValue}}</view>
+            </view>
+          </view>
+        </navigator>
+      </block>
+    </block>
+  </view>
+</view>

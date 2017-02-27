@@ -6,6 +6,12 @@
     <text class="item">出版社：{{publisher}}</text>
     <text class="item">ISBN：{{ISBN}}</text>
   </view>
+  <block wx:if="{{isCollect}}">
+    <image bindtap="cancelCollect" class="collect-btn" mode="aspectFit" src="../../images/icon/icon-love-cur.png"></image>
+  </block>
+  <block wx:else>
+    <image bindtap="collectBook" class="collect-btn" mode="aspectFit" src="../../images/icon/icon-love.png"></image>
+  </block>
 </view>
 <view class="tab">
   <block wx:if="{{current==0}}">
@@ -28,11 +34,11 @@
             <text>{{infoes[0].callNumber}}</text>
           </view>
           <view class="lib">
-            <view>{{infoes[0].location}}({{available}}/{{total}})： </view>
-            <view class="lib-item available"></view>
+            <view>{{infoes[0].location}}：共{{total}}本      可借{{available}}本 </view>
+            <!--<view class="lib-item available"></view>
             <view class="lib-item available"></view>
             <view class="lib-item"></view>
-            <view class="lib-item"></view>
+            <view class="lib-item"></view>-->
           </view>
         </view>
         <view class="label">简介:</view>
@@ -43,6 +49,8 @@
     </scroll-view>
   </swiper-item>
   <swiper-item>
-    评论功能正在开发...
+    <view class="doing">
+      Comming Soon...
+    </view>
   </swiper-item>
 </swiper>

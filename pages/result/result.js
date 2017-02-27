@@ -117,14 +117,15 @@ Page({
             pagesTotal: res.data.pagesTotal,
             scrollTop: "0"
           })
-
-          console.log("booksList"+that.data.booksList)
         } else {
           // 无搜索结果
           that.setData({
             status: "fail",
           })
         }
+      },
+      complete:function(){
+        
       }
     })
   },
@@ -188,7 +189,6 @@ Page({
   },
   //清除输入框
   clearInput: function () {
-
     this.setData({
       keyword: null,
       cancel: false,
@@ -196,11 +196,10 @@ Page({
     })
   },
   // 分享搜索结果
-  onShareAppMessage: function () {
+   onShareAppMessage: function () {
     return {
-      title: '自定义分享标题',
-      desc: '自定义分享描述',
-      path: '/pages/result'
+      title: '图书盒子',
+      path: '/pages/index/index'
     }
   }
 })

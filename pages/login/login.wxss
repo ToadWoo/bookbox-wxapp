@@ -19,7 +19,8 @@
     line-height: 80rpx;
     height: 80rpx;
     padding: 0 10rpx;
-    font-size: 36rpx
+    font-size: 36rpx;
+    
 }
 .m-login .inp-place{
     color: #b2b2b2;

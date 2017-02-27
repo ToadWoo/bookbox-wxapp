@@ -1,0 +1,193 @@
+page{
+  background: #f9fbfe;
+}
+.header {
+  background: #338ffc;
+  display: flex;
+  height: 200rpx;
+  padding: 20rpx;
+}
+
+.header .avatar-cot {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.3);
+  margin: 30rpx 30rpx 0 30rpx;
+}
+.header .unlogin-avatar{
+  margin: 30rpx auto;
+}
+
+.header .avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.header .user-infos {
+  margin-top: 30rpx;
+  color: #fff;
+  font-size: 36rpx;
+  width: 350rpx;
+}
+
+.header .user-infos .username{
+  padding-top: 10rpx;
+}
+.header .user-infos .remark{
+  font-size: 22rpx;
+  padding-top: 8rpx;
+}
+.header .logout-btn {
+  border: 1rpx solid #fff;
+  color: #fff;
+  width: 96rpx;
+  height: 50rpx;
+  padding: 0 20rpx;
+  line-height: 50rpx;
+  margin: 60rpx 0 0 60rpx;
+}
+.tab {
+  display: flex;
+  justify-content: space-around;
+  height: 105rpx;
+  border-bottom: solid 1rpx #ddd;
+  background: #fff;
+}
+
+.tab .item {
+  /*line-height: 80rpx;*/
+  min-width: 140rpx;
+  text-align: center;
+  border: none;
+  border-radius:0; 
+}
+.tab .item .num{
+  font-size: 50rpx;
+  color: #338ffc;
+  padding-top: 10rpx;
+  line-height: 50rpx;
+  font-weight:bolder;
+}
+.tab .item .danger{
+  color: #F7BA2A;
+}
+.tab .item .label{
+  font-size: 26rpx;
+  color: #b2b2b2;
+  line-height: 40rpx;
+  padding-bottom:5rpx; 
+}
+
+.tab .cur {
+  border-bottom: solid 6rpx #338ffc;
+}
+
+.list-content{
+    padding: 0 20rpx;
+}
+.swiper-content{
+  background: #f9fbfe;
+}
+.bookitem{
+  position: relative;
+  background: #fff;
+  border-radius: 20rpx; 
+  margin: 20rpx 0;
+  padding: 20rpx 40rpx;
+  color: #555;
+  box-shadow: 0 0 20rpx #eee; 
+}
+.bookitem .name{
+  font-size: 34rpx;
+  padding-bottom: 10rpx;
+}
+.bookitem .author{
+  font-size: 22rpx;
+  color: #b2b2b2;
+  padding-bottom: 10rpx;
+}
+.bookitem .other-infos{
+  display: flex;
+  flex-direction: row;
+  font-size: 22rpx;
+  color: #b2b2b2;
+}
+.bookitem .other-infos .info-item{
+  margin-right: 20rpx;
+  
+}
+.bookitem .other-infos .overflow{
+  max-width: 300rpx;
+   overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.bookitem .tip{
+  position: absolute;
+  background: #338ffc;
+  width: 110rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  top: 20rpx;
+  right: 0;
+  border-radius: 8rpx 0 0 8rpx; 
+}
+
+.bookitem .tip.danger{
+  background: #FF4949;
+}
+
+.unlogin{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.unlogin .img{
+  width: 120rpx;
+  height: 120rpx;
+  margin: 140rpx auto 0 auto;
+}
+.unlogin .tip{
+  font-size: 28rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  color: #555;
+}
+.unlogin .btn{
+  background: #13CE66;
+  display: block;
+  padding: 0 30rpx;
+  height: 60rpx;
+  width: 130rpx;
+  margin: 20rpx auto;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius:10rpx;
+  color: #fff;
+  font-size: 26rpx; 
+}
+
+.null-tip{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.null-tip .img{
+  width: 150rpx;
+  height: 150rpx;
+  margin: 150rpx auto 30rpx auto;
+}
+.null-tip .txt{
+  font-size: 26rpx;
+  color: #bcc1cc;
+  text-align: center;
+}
+

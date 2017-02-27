@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  position: relative;
   flex-direction: row;
   justify-content: space-between;
   padding: 60rpx 40rpx 0 40rpx;
@@ -18,6 +19,7 @@
   display: flex;
   flex-direction: column;
   color: #fff;
+  width: 380rpx;
 }
 
 .header .book-infos .name {
@@ -34,6 +36,14 @@
 .header .book-infos .item {
   font-size: 24rpx;
   padding-top: 5rpx;
+}
+
+.header .collect-btn{
+  width: 55rpx;
+  height: 55rpx;
+  position: absolute;
+  bottom:30rpx;
+  right: 40rpx;
 }
 
 .tab {
@@ -92,4 +102,10 @@
 
 .swiper-content .mes .intro {
   color: #777;
+}
+.doing{
+  color: #b2b2b2;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 26rpx;
 }

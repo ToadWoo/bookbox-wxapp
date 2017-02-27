@@ -1,11 +1,18 @@
+var app = getApp();
+var AV = require('../../utils/av-weapp-min.js');
+var hotapp = require('../../utils/hotapp.js');
+
 Page({
     data: {
+        load: false
     },
     onLoad: function (options) {
-        //发送异步请求，请求参数中包含app.js中的返回结果
-        console.log("testonload")
+
     },
     formSubmit: function (e) {
+
+        var that = this;
+
         //todo 表单验证
         var user = e.detail.value.user;
         var pwd = e.detail.value.password;
@@ -24,32 +31,90 @@ Page({
             })
             return false;
         }
-        console.log(user, pwd)
 
-        wx.request({
+        //更改绑定按钮loading状态
+        that.setData({
+            load: true
+        })
+
+        hotapp.request({
             url: 'http://api.diviniti.cn/jmu/library/login',
             data: {
                 user: user,
                 pwd: pwd
             },
             success: function (res) {
-                // success
-                console.log(res.data)
                 var cookie = res.data.cookie;
-                wx.request({
-                    url: 'http://api.diviniti.cn/jmu/library/user/info',
-                    data: {
-                        cookie:cookie
-                    },
-                    success: function (res) {
-                        // success
-                        console.log(res.data)
-                    }
+                var studentUser = {
+                    cookie: cookie,
+                    user: user,
+                    pwd: pwd
+                }
+                //成功后储存cookie
+                if (res.data.status == "success") {
+
+                    wx.setStorage({
+                        key: "tshz_isbind",
+                        data: true
+                    })
+                    wx.setStorage({
+                        key: "tshz_cookie",
+                        data: cookie
+                    })
+                    hotapp.request({
+                        url: 'http://api.diviniti.cn/jmu/library/user/info',
+                        data: { cookie: cookie },
+                        method: 'GET',
+                        success: function (res) {
+                            // success
+                            studentUser.infoes = res.data.infoes;
+                            const currentUser = AV.User.current();
+                            currentUser.set(studentUser).save();
+
+                            wx.setStorage({
+                                key: 'tshz_studentInfoes',
+                                data: res.data,
+                                success: function () {
+                                    wx.navigateBack({
+                                        delta: 1
+                                    })
+                                }
+                            })
+                        },
+                        complete: function () {
+
+                        }
+                    })
+
+                } else {
+                    wx.showToast({
+                        title: '用户名或密码输入有误',
+                        icon: 'success',
+                        duration: 2000
+                    })
+                }
+            },
+            fail: function () {
+                wx.showToast({
+                    title: '网络异常',
+                    icon: 'success',
+                    duration: 2000
+                })
+            },
+            complete: function () {
+                that.setData({
+                    load: false
                 })
             }
         })
 
 
 
+    },
+    onShareAppMessage: function () {
+        return {
+            title: '图书盒子',
+            path: '/pages/index/index'
+        }
     }
 });

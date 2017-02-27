@@ -1,0 +1,22 @@
+<view class="collect-list">
+  <block wx:if="{{collectList.length!='0'}}">
+    <navigator url="../detail/detail?bookid={{collectList[index].bookid}}&publisher={{collectList[index].publisher}}&total={{collectList[index].total}}&available={{collectList[index].available}}" wx:for="{{collectList}}" class="bookitem">
+      <view class="name">{{item.name}}</view>
+      <view class="author">{{item.author}}</view>
+      <view class="other-infos">
+        <view class="info-item">{{item.location}}</view>
+        <view class="info-item">{{item.callNumber}}</view>
+        <view class="info-item">可借:{{item.available}}</view>
+      </view>
+    </navigator>
+  </block>
+  <view wx:else class="null-tip">
+    <image class="img" mode="aspectFit" src="../../images/nobook-happy.png"></image>
+    <view class="txt">
+      您的收藏夹还是空的~
+    </view>
+     <view class="txt">
+      查找书时点击爱心即可收藏
+    </view>
+  </view>
+</view>

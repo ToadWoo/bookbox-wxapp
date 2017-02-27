@@ -1,3 +1,4 @@
+
 <image class="logo" mode="aspectFit" src="../../images/bookbox.png"></image>
 <form bindsubmit="formSubmit">
   <view class="m-search">
@@ -9,3 +10,4 @@
     <button class="search-btn" formType="submit">搜索</button>
   </view>
 </form>
+
